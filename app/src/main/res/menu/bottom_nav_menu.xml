@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Medicine"
+        android:id="@+id/medicine"
+    android:icon="@drawable/baseline_medication"
+    />
+    <item
+        android:title="Herbal"
+        android:id="@+id/herbal"
+    android:icon="@drawable/baseline_medication"
+    />
+    <item
+        android:title=""
+        android:id="@+id/placeholder"
+        />
+    <item
+        android:title="Cosmetics"
+        android:id="@+id/cosmetics"
+    android:icon="@drawable/baseline_medication"
+    />
+    <item
+        android:title="General"
+        android:id="@+id/general"
+    android:icon="@drawable/baseline_medication"
+    />
+
+</menu>
