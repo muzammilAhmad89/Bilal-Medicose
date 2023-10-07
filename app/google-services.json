@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "796791098882",
+    "project_id": "bilal-medicose",
+    "storage_bucket": "bilal-medicose.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796791098882:android:a5791dfa4335084767e11b",
+        "android_client_info": {
+          "package_name": "com.devWithMuzammil.bilalmedicose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAty3zcdlgglh7A0MeInH_YUf6OeYS7gTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796791098882:android:ea509e685fe5bebc67e11b",
+        "android_client_info": {
+          "package_name": "com.devwithmuzammil.bilalmedicose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAty3zcdlgglh7A0MeInH_YUf6OeYS7gTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

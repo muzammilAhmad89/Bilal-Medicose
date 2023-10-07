@@ -1,8 +1,9 @@
-package com.devWithMuzammil.bilalmedicose
+package com.devWithMuzammil.bilalmedicose.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
+import com.devWithMuzammil.bilalmedicose.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
