@@ -1,6 +1,6 @@
 package com.devWithMuzammil.bilalmedicose.Models
 
-data class MedicineModel(
+data class  MedicineModel(
     var medicineName: String? = "",
     var retail:String?="",
     var purchase: String? = "",

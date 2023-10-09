@@ -2,35 +2,272 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:id="@+id/add"
-    tools:context=".fragments.AddFragment">
-
+    tools:context=".AddFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Purchase From"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Purchase From"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dealer Name"
+                android:layout_marginLeft="30dp"
+                android:layout_marginVertical="5dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Enter Dealer Name"
+                android:layout_marginHorizontal="20dp"
+                android:paddingLeft="20dp"
+                android:background="@drawable/round_textview"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone No"
+                android:layout_marginLeft="30dp"
+                android:layout_marginVertical="5dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/round_textview"
+                android:hint="Enter Number"
+                android:paddingLeft="20dp"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dealer Address"
+                android:layout_marginLeft="30dp"
+                android:layout_marginVertical="5dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/round_textview"
+                android:hint="Enter Address"
+                android:paddingLeft="20dp"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black"
+                android:layout_marginVertical="20dp"
+                />
 
 
-    <GridLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:rowCount="12"
-       android:columnCount="6"
-       >
-      <EditText
-          android:layout_width="match_parent"/>
 
-   </GridLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medicine Details"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            />
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="6"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="5dp"
+                android:paddingLeft="7dp"
+                android:background="@drawable/square_textview"
+                android:hint="Med Name" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Retail"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:paddingLeft="7dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/square_textview"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Purchase"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:paddingLeft="7dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/square_textview"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Discount"
+                android:layout_columnWeight="1"
+                android:paddingLeft="7dp"
+                android:layout_row="2"
+                android:layout_margin="5dp"
+                android:background="@drawable/square_textview"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Bonus"
+                android:layout_columnWeight="1"
+                android:layout_row="2"
+                android:paddingLeft="7dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/square_textview"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:hint="ID"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_margin="5dp"
+                android:background="@drawable/square_textview"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Purchase Date"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_margin="5dp"
+                android:paddingLeft="7dp"
+                android:background="@drawable/square_textview"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Type"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:paddingLeft="7dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/square_textview"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Strength"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:paddingLeft="7dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/square_textview"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Volume"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_margin="5dp"
+                android:paddingLeft="7dp"
+                android:background="@drawable/square_textview"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Total Quantity"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_margin="5dp"
+                android:paddingLeft="7dp"
+                android:background="@drawable/square_textview"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Total Quantity"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_margin="5dp"
+                android:paddingLeft="7dp"
+                android:background="@drawable/square_textview"
+                />
+            <Spinner
+                android:id="@+id/coursesspinner"
+                android:layout_height="50dp"
+                android:layout_width="160dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+
+
+        </GridLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_gravity="right"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            />
     </LinearLayout>
+
 </FrameLayout>
