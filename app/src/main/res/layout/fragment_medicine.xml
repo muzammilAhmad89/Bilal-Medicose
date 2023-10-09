@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/medicine"
-    tools:context=".MedicineFragment">
+    tools:context=".fragments.MedicineFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

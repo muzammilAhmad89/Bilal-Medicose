@@ -15,7 +15,7 @@
         />
     <item
         android:title="Cosmetics"
-        android:id="@+id/cosmetics"
+        android:id="@+id/cosmetic"
     android:icon="@drawable/baseline_medication"
     />
     <item

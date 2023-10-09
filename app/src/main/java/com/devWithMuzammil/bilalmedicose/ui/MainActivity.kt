@@ -3,13 +3,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.devWithMuzammil.bilalmedicose.AddFragment
-import com.devWithMuzammil.bilalmedicose.CosmaticsFragment
-import com.devWithMuzammil.bilalmedicose.GeneralFragment
-import com.devWithMuzammil.bilalmedicose.HerbalFragment
-import com.devWithMuzammil.bilalmedicose.MedicineFragment
+import com.devWithMuzammil.bilalmedicose.fragments.AddFragment
+import com.devWithMuzammil.bilalmedicose.fragments.GeneralFragment
+import com.devWithMuzammil.bilalmedicose.fragments.HerbalFragment
+import com.devWithMuzammil.bilalmedicose.fragments.MedicineFragment
 import com.devWithMuzammil.bilalmedicose.R
 import com.devWithMuzammil.bilalmedicose.databinding.ActivityMainBinding
+import com.devWithMuzammil.bilalmedicose.fragments.CosmaticFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -27,13 +27,13 @@ class MainActivity : AppCompatActivity() {
 
             when (menuItem.itemId) {
                 R.id.herbal -> {
-                    transaction.replace(R.id.container,HerbalFragment())
+                    transaction.replace(R.id.container, HerbalFragment())
                 }
                 R.id.medicine -> {
                     transaction.replace(R.id.container, MedicineFragment())
                 }
-                R.id.cosmatics -> {
-                    transaction.replace(R.id.container, CosmaticsFragment())
+                R.id.cosmatic -> {
+                    transaction.replace(R.id.container, CosmaticFragment())
                     Log.d("MainActivity", "Cosmatics Fragment replaced")
                 }
                 R.id.general -> {
