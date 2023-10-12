@@ -1,6 +1,7 @@
 package com.devWithMuzammil.bilalmedicose.data
 
 import android.content.Context
+import android.widget.Toast
 import com.devWithMuzammil.bilalmedicose.Models.MedicineModel
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
@@ -14,6 +15,8 @@ class Repo(val context: Context) {
     private var MEDICINE_COLLECTION=db.collection("Medicine")
     private var COSMETICS_COLLECTION=db.collection("Cosmetics")
     private var GENERAL_COLLECTION=db.collection("General")
+    private var PURCHASER_COLLECTION=db.collection("Purchasers")
+
 
 
     suspend fun getHerbal(): Task<QuerySnapshot> {
@@ -35,6 +38,24 @@ class Repo(val context: Context) {
 
         return GENERAL_COLLECTION.get()
 
+    }
+    fun savePurchaserToFirestore(name:String,phone:String,address:String): Boolean {
+        try {
+            // Convert the model to a Map (Firestore requires a Map)
+            val modelMap = mapOf(
+                "dealerName" to name,
+                "phoneName" to phone,
+                "dealerAddress" to address
+            )
+
+            // Add the model to Firestore
+            PURCHASER_COLLECTION.add(modelMap)
+            return true
+        } catch (e: Exception) {
+            Toast.makeText(context,""+e,Toast.LENGTH_SHORT).show()
+            e.printStackTrace()
+            return false
+        }
     }
     fun uploadHerbalMedicine(medicineModel: MedicineModel): Boolean {
         var success = false

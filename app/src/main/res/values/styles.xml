@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationStyle">
+        <item name="android:background">#ACC8E5</item>
+        <item name="android:elevation">4dp</item>
+        <item name="itemIconTint">#ACC8E5</item>
+        <item name="itemTextColor">#ACC8E5</item>
+    </style>
+    <style name="button">
+    <item name="android:background">@color/primary</item>
+    </style>
+</resources>

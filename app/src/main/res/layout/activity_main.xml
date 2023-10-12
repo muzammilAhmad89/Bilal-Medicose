@@ -7,9 +7,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/bilal_med_logo"
+            />
+    </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:background="@color/secondary"
         android:id="@+id/container"
         />
 
@@ -26,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:id="@+id/bottomBar"
-                android:backgroundTint="#ACC8E5"
+                android:backgroundTint="@color/white"
                 android:layout_gravity="bottom"
                 app:fabCradleMargin="40dp"
                 app:fabCradleVerticalOffset="20dp"
@@ -36,16 +49,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="16dp"
-                    android:background="#ACC8E5"
+                    android:background="@color/white"
                     android:id="@+id/bottomNavigation"
                     app:menu="@menu/bottom_nav_menu"
 
-                    />
+                />
             </com.google.android.material.bottomappbar.BottomAppBar>
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00B2EA"
+                android:backgroundTint="#EF533A"
                 android:id="@+id/add"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="30dp"
