@@ -3,6 +3,7 @@ package com.devWithMuzammil.bilalmedicose.data
 import android.content.Context
 import android.widget.Toast
 import com.devWithMuzammil.bilalmedicose.Models.MedicineModel
+import com.devWithMuzammil.bilalmedicose.Models.PurchaserModel
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -39,40 +40,71 @@ class Repo(val context: Context) {
         return GENERAL_COLLECTION.get()
 
     }
-    fun savePurchaserToFirestore(name:String,phone:String,address:String): Boolean {
+    fun savePurchaser(purchaserModel: PurchaserModel){
         try {
-            // Convert the model to a Map (Firestore requires a Map)
-            val modelMap = mapOf(
-                "dealerName" to name,
-                "phoneName" to phone,
-                "dealerAddress" to address
-            )
-
             // Add the model to Firestore
-            PURCHASER_COLLECTION.add(modelMap)
-            return true
-        } catch (e: Exception) {
+            PURCHASER_COLLECTION.add(purchaserModel)
+                .addOnSuccessListener { documentReference ->
+                    val documentId = documentReference.id
+                    purchaserModel.Id = documentId
+
+                    PURCHASER_COLLECTION.document(documentId).set(purchaserModel)
+                }
+
+            } catch (e: Exception) {
             Toast.makeText(context,""+e,Toast.LENGTH_SHORT).show()
             e.printStackTrace()
-            return false
         }
     }
-    fun uploadHerbalMedicine(medicineModel: MedicineModel): Boolean {
-        var success = false
+    fun getPurchaser():Task<QuerySnapshot>{
+        return PURCHASER_COLLECTION.get()
 
-        // Create a reference to a new document in the "HERBAL_COLLECTION" collection
-        val documentReference = HERBAL_COLLECTION.document()
+    }
+    fun uploadHerbalMedicine(medicineModel: MedicineModel) {
 
         // Set the data of the new document to the MedicineModel object
-        documentReference.set(medicineModel)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    // The document was successfully created
-                    success = true
-                }
+        HERBAL_COLLECTION.add(medicineModel)
+            .addOnSuccessListener { documentReference ->
+                val documentId = documentReference.id
+                medicineModel.id = documentId
+
+                PURCHASER_COLLECTION.document(documentId).set(medicineModel)
             }
 
-        return success
+    }
+    fun uploadMedicine(medicineModel: MedicineModel) {
+        // Set the data of the new document to the MedicineModel object
+        MEDICINE_COLLECTION.add(medicineModel)
+            .addOnSuccessListener { documentReference ->
+                val documentId = documentReference.id
+                medicineModel.id = documentId
+
+                MEDICINE_COLLECTION.document(documentId).set(medicineModel)
+            }
+
+    }
+    fun uploadCosmetics(medicineModel: MedicineModel) {
+
+        // Set the data of the new document to the MedicineModel object
+        COSMETICS_COLLECTION.add(medicineModel)
+            .addOnSuccessListener { documentReference ->
+                val documentId = documentReference.id
+                medicineModel.id = documentId
+
+                COSMETICS_COLLECTION.document(documentId).set(medicineModel)
+            }
+
+    }
+    fun uploadGeneral(medicineModel: MedicineModel) {
+        // Set the data of the new document to the MedicineModel object
+        GENERAL_COLLECTION.add(medicineModel)
+            .addOnSuccessListener { documentReference ->
+                val documentId = documentReference.id
+                medicineModel.id = documentId
+
+                GENERAL_COLLECTION.document(documentId).set(medicineModel)
+            }
+
     }
 
 }

@@ -1,4 +1,6 @@
 package com.devWithMuzammil.bilalmedicose.ui
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -13,11 +15,13 @@ import com.devWithMuzammil.bilalmedicose.fragments.MedicineFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var mContext: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        mContext=this@MainActivity
 
         // To disable night theme in the application
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -54,10 +58,7 @@ class MainActivity : AppCompatActivity() {
         val initialFragment = HerbalFragment()
         supportFragmentManager.beginTransaction().replace(R.id.container, initialFragment).commit()
         binding.add.setOnClickListener { view ->
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.container, AddFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
+            startActivity(Intent(mContext,ActivityAdd::class.java))
         }
     }
 }

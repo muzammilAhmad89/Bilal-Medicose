@@ -11,5 +11,8 @@ data class  MedicineModel(
     var strength: String? = "",
     var volume: String? = "",
     var totalQuantity: String? = "",
+    var purchasedFrom: String? = "",
+    var note:String?="",
+    var formula:String?=""
 
-    )
+)
