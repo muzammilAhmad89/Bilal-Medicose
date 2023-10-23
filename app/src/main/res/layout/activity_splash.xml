@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#383B40"
+    android:background="#242424"
     tools:context=".ui.ActivitySplash">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="310dp"
         android:layout_height="310dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/bilal_med_logo" />
+        android:layout_centerInParent="true"
+        android:src="@drawable/bilal_medicose" />
 
 <!--    <com.google.android.material.imageview.ShapeableImageView-->
 <!--        android:layout_width="140dp"-->

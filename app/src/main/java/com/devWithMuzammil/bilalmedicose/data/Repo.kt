@@ -20,22 +20,22 @@ class Repo(val context: Context) {
 
 
 
-    suspend fun getHerbal(): Task<QuerySnapshot> {
+    fun getHerbal(): Task<QuerySnapshot> {
 
         return HERBAL_COLLECTION.get()
 
     }
-    suspend fun GetMedicine(): Task<QuerySnapshot> {
+     fun GetMedicine(): Task<QuerySnapshot> {
 
         return MEDICINE_COLLECTION.get()
 
     }
-    suspend fun getCosmetics(): Task<QuerySnapshot> {
+    fun getCosmetics(): Task<QuerySnapshot> {
 
         return COSMETICS_COLLECTION.get()
 
     }
-    suspend fun getGeneral(): Task<QuerySnapshot> {
+    fun getGeneral(): Task<QuerySnapshot> {
 
         return GENERAL_COLLECTION.get()
 

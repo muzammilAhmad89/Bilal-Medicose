@@ -3,6 +3,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.devWithMuzammil.bilalmedicose.R
@@ -36,9 +37,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.medicine -> {
                     transaction.replace(R.id.container, MedicineFragment())
                 }
-                R.id.cosmatic -> {
+                R.id.cosmetic -> {
                     transaction.replace(R.id.container, CosmaticFragment())
-                    Log.d("MainActivity", "Cosmatics Fragment replaced")
+                    //Toast.makeText(mContext, "Cosmetics are here", Toast.LENGTH_SHORT).show()
                 }
                 R.id.general -> {
                     transaction.replace(R.id.container, GeneralFragment())

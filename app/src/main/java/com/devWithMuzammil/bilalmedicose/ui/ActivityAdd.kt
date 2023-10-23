@@ -1,6 +1,7 @@
 package com.devWithMuzammil.bilalmedicose.ui
 
 import android.content.Context
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import com.devWithMuzammil.bilalmedicose.Models.MedicineModel
 import com.devWithMuzammil.bilalmedicose.Models.ProductViewModel
@@ -16,6 +18,8 @@ import com.devWithMuzammil.bilalmedicose.Models.PurchaserModel
 import com.devWithMuzammil.bilalmedicose.R
 import com.devWithMuzammil.bilalmedicose.databinding.ActivityAddBinding
 import kotlinx.coroutines.launch
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class ActivityAdd : AppCompatActivity() {
     private var purchaserSelected: String?=null
@@ -26,12 +30,14 @@ class ActivityAdd : AppCompatActivity() {
     private lateinit var purchaserList: ArrayList<PurchaserModel>
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
         mContext=this@ActivityAdd
         purchaserList= ArrayList()
+        //Toast.makeText(mContext, ""+getCurrentDate(), Toast.LENGTH_SHORT).show()
 
         ///////////////spinner setting/////////////
         val items = listOf("Herbal", "Medicine", "General", "Cosmetics")
@@ -65,7 +71,7 @@ class ActivityAdd : AppCompatActivity() {
                     productViewModel.savePurchaser(purchaserModel)
                     Toast.makeText(mContext, "Added Successfully", Toast.LENGTH_SHORT).show()
                 }
-                else binding.purchaserName.setError("enter a name")
+                else binding.purchaserName.error = "enter a name"
 
             }
             catch (e:Exception){
@@ -89,6 +95,7 @@ class ActivityAdd : AppCompatActivity() {
         fetchAndInitializeSpinner()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun uploadHerbalMedicine() {
         try {
             val medicineModel=MedicineModel(
@@ -97,7 +104,7 @@ class ActivityAdd : AppCompatActivity() {
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
-                "",
+                getCurrentDate(),
                 selectedProductType,
                 binding.strength.text.toString(),
                 binding.ml.text.toString(),
@@ -115,6 +122,7 @@ class ActivityAdd : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun uploadMedicine() {
         try {
             val medicineModel=MedicineModel(
@@ -123,7 +131,7 @@ class ActivityAdd : AppCompatActivity() {
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
-                "",
+                getCurrentDate(),
                 selectedProductType,
                 binding.strength.text.toString(),
                 binding.ml.text.toString(),
@@ -137,10 +145,11 @@ class ActivityAdd : AppCompatActivity() {
 
         }
         catch (e:Exception){
-            Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext, "this:"+e.message, Toast.LENGTH_SHORT).show()
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun uploadGeneral() {
         try {
             val medicineModel=MedicineModel(
@@ -149,7 +158,7 @@ class ActivityAdd : AppCompatActivity() {
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
-                "",
+                getCurrentDate(),
                 selectedProductType,
                 binding.strength.text.toString(),
                 binding.ml.text.toString(),
@@ -167,6 +176,7 @@ class ActivityAdd : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun uploadCosmetics() {
         try {
             val medicineModel=MedicineModel(
@@ -175,7 +185,7 @@ class ActivityAdd : AppCompatActivity() {
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
-                "",
+                getCurrentDate(),
                 selectedProductType,
                 binding.strength.text.toString(),
                 binding.ml.text.toString(),
@@ -241,5 +251,11 @@ class ActivityAdd : AppCompatActivity() {
                 }
         }
 
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun getCurrentDate(): String {
+        val currentDate = LocalDate.now()
+        val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        return currentDate.format(formatter)
     }
 }
