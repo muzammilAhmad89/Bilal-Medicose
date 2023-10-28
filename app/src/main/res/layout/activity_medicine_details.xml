@@ -9,7 +9,8 @@
     tools:context=".ui.ActivityMedicineDetails">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingBottom="25dp"
         >
         <TextView
             android:id="@+id/medName"
@@ -25,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="formula"
+            android:text=""
             android:layout_toRightOf="@+id/medName"
             android:fontFamily="@font/montserrate_semi_bold"
             android:textSize="18dp"
@@ -39,13 +40,13 @@
             android:textSize="14dp"
             android:fontFamily="@font/montserrate_semi_bold"
             android:layout_below="@+id/medName"
-            android:textColor="@color/grey"
+            android:textColor="@color/Grey"
             />
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey"
+            android:background="@color/Grey"
             android:layout_marginVertical="10dp"
             android:layout_below="@id/medFormula"
             android:layout_marginRight="70dp"
@@ -94,7 +95,180 @@
             android:layout_toRightOf="@id/tvPrice"
             android:layout_marginTop="5dp"
             />
-        
+        <TextView
+            android:id="@+id/tvBonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bonus:"
+            android:fontFamily="@font/montserrate_semi_bold"
+            android:textSize="12dp"
+            android:textColor="@color/blue"
+            android:layout_below="@id/tvPrice"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/bonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="234"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@id/tvPrice"
+            android:layout_toRightOf="@id/tvBonus"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/tvDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discount:"
+            android:fontFamily="@font/montserrate_semi_bold"
+            android:textSize="12dp"
+            android:textColor="@color/blue"
+            android:layout_below="@id/tvBonus"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="234"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@id/tvBonus"
+            android:layout_toRightOf="@id/tvDiscount"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/tvPurchaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Purchase Date:"
+            android:fontFamily="@font/montserrate_semi_bold"
+            android:textSize="12dp"
+            android:textColor="@color/blue"
+            android:layout_below="@id/tvDiscount"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/purchaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="234"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@id/tvDiscount"
+            android:layout_toRightOf="@id/tvPurchaseDate"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/tvTotalQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Quantity:"
+            android:fontFamily="@font/montserrate_semi_bold"
+            android:textSize="12dp"
+            android:textColor="@color/blue"
+            android:layout_below="@id/tvPurchaseDate"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/totalQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="234"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@id/tvPurchaseDate"
+            android:layout_toRightOf="@id/tvTotalQuantity"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/tvPurchasedFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Purchased From:"
+            android:fontFamily="@font/montserrate_semi_bold"
+            android:textSize="12dp"
+            android:textColor="@color/blue"
+            android:layout_below="@id/tvTotalQuantity"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/purchsedFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="234"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@id/totalQuantity"
+            android:layout_toRightOf="@id/tvPurchasedFrom"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/tvPurchasedFromPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone number:"
+            android:fontFamily="@font/montserrate_semi_bold"
+            android:textSize="12dp"
+            android:textColor="@color/blue"
+            android:layout_below="@id/tvPurchasedFrom"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/purchsedFromPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="234"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@id/purchsedFrom"
+            android:layout_toRightOf="@id/tvPurchasedFromPhone"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/tvPurchasedFromAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address:"
+            android:fontFamily="@font/montserrate_semi_bold"
+            android:textSize="12dp"
+            android:textColor="@color/blue"
+            android:layout_below="@id/tvPurchasedFromPhone"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/purchsedFromAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="234"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@id/purchsedFromPhone"
+            android:layout_toRightOf="@id/tvPurchasedFromAddress"
+            android:layout_marginTop="5dp"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/green"
+            android:src="@drawable/baseline_call"
+            android:backgroundTint="@color/green"
+            android:tint="@color/black"
+            app:shapeAppearance="@style/Widget.Material3.CircularProgressIndicator.Small"
+            />
     </RelativeLayout>
-
 </LinearLayout>

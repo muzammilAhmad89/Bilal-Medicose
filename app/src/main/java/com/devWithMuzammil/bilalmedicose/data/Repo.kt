@@ -60,6 +60,7 @@ class Repo(val context: Context) {
         return PURCHASER_COLLECTION.get()
 
     }
+
     fun uploadHerbalMedicine(medicineModel: MedicineModel) {
 
         // Set the data of the new document to the MedicineModel object
@@ -68,7 +69,7 @@ class Repo(val context: Context) {
                 val documentId = documentReference.id
                 medicineModel.id = documentId
 
-                PURCHASER_COLLECTION.document(documentId).set(medicineModel)
+                HERBAL_COLLECTION.document(documentId).set(medicineModel)
             }
 
     }

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.devWithMuzammil.bilalmedicose.Models.MedicineModel
 import com.devWithMuzammil.bilalmedicose.Models.ProductViewModel
+import com.devWithMuzammil.bilalmedicose.Models.PurchaserModel
 import com.devWithMuzammil.bilalmedicose.R
 import com.devWithMuzammil.bilalmedicose.SharedPrefManager
 import kotlinx.coroutines.launch
@@ -56,9 +57,21 @@ class ActivitySplash : AppCompatActivity() {
                                                 lifecycleScope.launch {
                                                     productViewModel.getGeneral().addOnCompleteListener { task->
                                                         if(task.isSuccessful){
+                                                            lifecycleScope.launch {
+                                                                productViewModel.getPurchaser().addOnCompleteListener { task->
+                                                                    if(task.isSuccessful){
+                                                                        sharedPrefManager.putPurchaserList(task.result.map { it.toObject(PurchaserModel::class.java) })
+                                                                        startActivity(Intent(this@ActivitySplash,MainActivity::class.java))
+                                                                        finish()
+                                                                    }
+
+
+                                                                }.addOnFailureListener {e->
+                                                                    Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
+                                                                }
+
+                                                            }
                                                             sharedPrefManager.putGeneralList(task.result.map { it.toObject(MedicineModel::class.java) })
-                                                            startActivity(Intent(this@ActivitySplash,MainActivity::class.java))
-                                                            finish()
                                                         }
 
 

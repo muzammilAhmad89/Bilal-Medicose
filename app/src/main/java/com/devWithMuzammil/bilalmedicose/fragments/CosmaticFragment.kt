@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -27,6 +28,8 @@ class CosmaticFragment : Fragment() {
     private var list: List<MedicineModel> = listOf()
     private lateinit var mContext: Context
     private lateinit var sharedPrefManager: SharedPrefManager
+    private lateinit var searchView: SearchView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,6 +50,38 @@ class CosmaticFragment : Fragment() {
         sharedPrefManager= SharedPrefManager(mContext)
 
         getData()
+        // Initialize the SearchView
+        searchView = view.findViewById(R.id.svCosmetics)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // Handle search query submission if needed
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Filter the original list based on the search query
+                val filteredList = list.filter { medicine ->
+                    // Check if the search query matches any of the parameters
+                    val searchQuery = newText.orEmpty().toLowerCase()
+                    medicine.medicineName?.toLowerCase()?.contains(searchQuery) == true ||
+                            medicine.retail?.toLowerCase()?.contains(searchQuery) == true ||
+                            medicine.price?.toLowerCase()?.contains(searchQuery) == true ||
+                            medicine.discount?.toLowerCase()?.contains(searchQuery) == true ||
+                            medicine.discount?.toLowerCase()?.contains(searchQuery) == true
+                    // Add similar checks for other parameters as needed
+                    // Example: medicine.strength?.toLowerCase()?.contains(searchQuery) == true ||
+                    // ...
+
+                }
+
+                // Update the adapter with the filtered list
+                adapter.updateList(filteredList)
+
+                return true
+            }
+
+        })
+
 
         return view
     }

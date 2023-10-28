@@ -9,13 +9,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:orientation="vertical"
         >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingVertical="10dp"
+            android:background="@color/black">
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/svGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:background="@color/white"
+                android:layout_marginHorizontal="10dp"
+                />
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvGeneral"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             />
     </LinearLayout>
 

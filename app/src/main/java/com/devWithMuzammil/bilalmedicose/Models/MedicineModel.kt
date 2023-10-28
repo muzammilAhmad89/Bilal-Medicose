@@ -3,6 +3,7 @@ package com.devWithMuzammil.bilalmedicose.Models
 data class  MedicineModel(
     var medicineName: String? = "",
     var retail:String?="",
+    var price:String?="",
     var discount: String? = "",
     var bonus: String? = "",
     var id: String? = "",

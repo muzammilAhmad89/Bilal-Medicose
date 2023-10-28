@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/herbal"
+            android:title="Herbal"
+            android:icon="@drawable/baseline_add"
+            />
+        <item
+            android:id="@+id/medicines"
+            android:title="Medicines"
+            android:icon="@drawable/baseline_add"
+            />
+
+        <item
+            android:id="@+id/cosmetic"
+            android:title="Cosmetics"
+            android:icon="@drawable/baseline_add"
+            />
+        <item
+            android:id="@+id/general"
+            android:title="General"
+            android:icon="@drawable/baseline_add"
+            />
+
+<!--        <item-->
+<!--            android:id="@+id/logout"-->
+<!--            android:title="Logout"-->
+<!--            android:icon="@drawable/baseline_add"-->
+<!--            />-->
+
+</menu>

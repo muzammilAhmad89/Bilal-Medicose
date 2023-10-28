@@ -13,7 +13,7 @@
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/secondary"
             >
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/edittext_style"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:layout_marginHorizontal="20dp"
 
                     />
@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/edittext_style"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:layout_marginHorizontal="20dp"
                     android:inputType="phone"
                     />
@@ -99,7 +99,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/edittext_style"
                     android:layout_marginHorizontal="20dp"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     />
 
                 <com.google.android.material.button.MaterialButton
@@ -142,7 +142,7 @@
                 android:id="@+id/medName"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:textSize="17dp"
+                android:textSize="13dp"
                 android:background="@drawable/edittext_style"
                 android:elevation="3dp"
                 android:layout_marginBottom="20dp"
@@ -153,7 +153,7 @@
                 android:id="@+id/medFormula"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:textSize="17dp"
+                android:textSize="13dp"
                 android:background="@drawable/edittext_style"
                 android:elevation="3dp"
                 android:layout_marginBottom="10dp"
@@ -170,9 +170,9 @@
                     android:id="@+id/price"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:textSize="17dp"
+                    android:textSize="13dp"
                     android:layout_weight="1"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:inputType="number"
                     android:background="@drawable/edittext_style"
                     android:layout_margin="10dp"
@@ -183,12 +183,12 @@
                     android:id="@+id/retail"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:textSize="17dp"
+                    android:textSize="13dp"
                     android:hint="Retail"
                     android:inputType="number"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:fontFamily="@font/montserrat_regular"
 
                     android:background="@drawable/edittext_style"
@@ -204,11 +204,11 @@
                     android:id="@+id/bonus"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:textSize="17dp"
+                    android:textSize="13dp"
                     android:layout_weight="1"
                     android:inputType="text"
                     android:fontFamily="@font/montserrat_regular"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:background="@drawable/edittext_style"
                     android:layout_margin="10dp"
                     android:hint="Bonus" />
@@ -217,13 +217,13 @@
                     android:id="@+id/discount"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:textSize="17dp"
+                    android:textSize="13dp"
                     android:hint="Discount"
                     android:inputType="number"
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_regular"
                     android:layout_margin="10dp"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:background="@drawable/edittext_style"
                     />
             </LinearLayout>
@@ -237,12 +237,12 @@
                     android:id="@+id/strength"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:textSize="17dp"
-                    android:hint="Strength(e.g. mg)"
+                    android:textSize="13dp"
+                    android:hint="mg"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
                     android:fontFamily="@font/montserrat_regular"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:background="@drawable/edittext_style"
                     />
 
@@ -250,13 +250,13 @@
                     android:id="@+id/totalQuantity"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:textSize="17dp"
+                    android:textSize="13dp"
                     android:hint="Total Quantity"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
                     android:inputType="number"
                     android:fontFamily="@font/montserrat_regular"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:background="@drawable/edittext_style"
                     />
             </LinearLayout>
@@ -270,13 +270,13 @@
                     android:id="@+id/ml"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:textSize="17dp"
+                    android:textSize="13dp"
                     android:hint="ml"
                     android:inputType="numberSigned"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
                     android:fontFamily="@font/montserrat_regular"
-                    android:elevation="3dp"
+                    android:elevation="2dp"
                     android:background="@drawable/edittext_style"
                     />
                 <LinearLayout
@@ -284,6 +284,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
+                    android:backgroundTint="@color/white"
                     android:background="@drawable/bg_spinner">
 
                     <androidx.appcompat.widget.AppCompatSpinner
@@ -297,6 +298,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/bg_spinner">
 
                 <androidx.appcompat.widget.AppCompatSpinner

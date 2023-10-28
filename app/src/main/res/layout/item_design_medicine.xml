@@ -16,20 +16,20 @@
             android:layout_height="wrap_content"
             android:text="name"
             android:textSize="15dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/montserrate_semi_bold"
+            android:textColor="@color/green"
+            android:fontFamily="@font/montserrat_bold"
             android:layout_marginLeft="10dp"
             />
         <TextView
             android:id="@+id/medPower"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="mg"
-            android:textColor="@color/black"
+            android:text=""
+            android:textColor="@color/green"
             android:layout_toRightOf="@+id/medName"
             android:layout_marginLeft="4dp"
-            android:fontFamily="@font/montserrate_semi_bold"
-            android:textSize="14dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="15dp"
             />
         <TextView
             android:id="@+id/medFromula"
@@ -39,7 +39,7 @@
             android:layout_marginLeft="10dp"
             android:text="Formula"
             android:textColor="@color/black"
-            android:textSize="12dp"
+            android:textSize="13dp"
             android:fontFamily="@font/montserrat_regular"
             />
         <TextView
@@ -47,8 +47,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="date"
-            android:textColor="@color/grey"
-            android:fontFamily="@font/montserrat_regular"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrate_semi_bold"
             android:layout_below="@id/medFromula"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
@@ -56,7 +57,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey"
+            android:background="@color/Grey"
             android:layout_below="@id/date"
             android:layout_marginTop="5dp"
             />

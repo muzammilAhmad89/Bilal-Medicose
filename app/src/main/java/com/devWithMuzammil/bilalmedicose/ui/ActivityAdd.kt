@@ -1,6 +1,7 @@
 package com.devWithMuzammil.bilalmedicose.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,7 @@ import com.devWithMuzammil.bilalmedicose.Models.MedicineModel
 import com.devWithMuzammil.bilalmedicose.Models.ProductViewModel
 import com.devWithMuzammil.bilalmedicose.Models.PurchaserModel
 import com.devWithMuzammil.bilalmedicose.R
+import com.devWithMuzammil.bilalmedicose.SharedPrefManager
 import com.devWithMuzammil.bilalmedicose.databinding.ActivityAddBinding
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -28,6 +30,7 @@ class ActivityAdd : AppCompatActivity() {
     private val productViewModel:ProductViewModel by viewModels()
     private lateinit var mContext: Context
     private lateinit var purchaserList: ArrayList<PurchaserModel>
+    private lateinit var sharedPrefManager:SharedPrefManager
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -37,6 +40,7 @@ class ActivityAdd : AppCompatActivity() {
         setContentView(binding.root)
         mContext=this@ActivityAdd
         purchaserList= ArrayList()
+        sharedPrefManager= SharedPrefManager(mContext)
         //Toast.makeText(mContext, ""+getCurrentDate(), Toast.LENGTH_SHORT).show()
 
         ///////////////spinner setting/////////////
@@ -70,6 +74,20 @@ class ActivityAdd : AppCompatActivity() {
                     )
                     productViewModel.savePurchaser(purchaserModel)
                     Toast.makeText(mContext, "Added Successfully", Toast.LENGTH_SHORT).show()
+                    lifecycleScope.launch {
+                        productViewModel.getPurchaser().addOnCompleteListener { task->
+                            if(task.isSuccessful){
+                                sharedPrefManager.putPurchaserList(task.result.map { it.toObject(PurchaserModel::class.java) })
+                                fetchAndInitializeSpinner()
+                            }
+                            else Toast.makeText(mContext, "Slow connection, restart the app", Toast.LENGTH_LONG).show()
+
+
+                        }.addOnFailureListener {e->
+                            Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
+                        }
+
+                    }
                 }
                 else binding.purchaserName.error = "enter a name"
 
@@ -101,6 +119,7 @@ class ActivityAdd : AppCompatActivity() {
             val medicineModel=MedicineModel(
                 binding.medName.text.toString(),
                 binding.retail.text.toString(),
+                binding.price.text.toString(),
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
@@ -115,6 +134,29 @@ class ActivityAdd : AppCompatActivity() {
             )
             productViewModel.uploadHerbalMedicine(medicineModel)
             Toast.makeText(mContext, "Added Successfully", Toast.LENGTH_SHORT).show()
+            binding.medName.text.clear()
+            binding.retail.text.clear()
+            binding.price.text.clear()
+            binding.discount.text.clear()
+            binding.bonus.text.clear()
+            binding.strength.text.clear()
+            binding.ml.text.clear()
+            binding.totalQuantity.text.clear()
+            binding.medFormula.text.clear()
+
+            lifecycleScope.launch {
+                productViewModel.getHerbal().addOnCompleteListener { task->
+                    if(task.isSuccessful){
+                        sharedPrefManager.putHerbalList(task.result.map { it.toObject(MedicineModel::class.java) })
+                    }
+                    else Toast.makeText(mContext, "Slow connection, restart the app", Toast.LENGTH_LONG).show()
+
+
+                }.addOnFailureListener {e->
+                    Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
+                }
+
+            }
 
         }
         catch (e:Exception){
@@ -128,6 +170,7 @@ class ActivityAdd : AppCompatActivity() {
             val medicineModel=MedicineModel(
                 binding.medName.text.toString(),
                 binding.retail.text.toString(),
+                binding.price.text.toString(),
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
@@ -142,6 +185,29 @@ class ActivityAdd : AppCompatActivity() {
             )
             productViewModel.uploadMedicine(medicineModel)
             Toast.makeText(mContext, "Added Successfully", Toast.LENGTH_SHORT).show()
+            binding.medName.text.clear()
+            binding.retail.text.clear()
+            binding.price.text.clear()
+            binding.discount.text.clear()
+            binding.bonus.text.clear()
+            binding.strength.text.clear()
+            binding.ml.text.clear()
+            binding.totalQuantity.text.clear()
+            binding.medFormula.text.clear()
+
+            lifecycleScope.launch {
+                productViewModel.getMedicine().addOnCompleteListener { task->
+                    if(task.isSuccessful){
+                        sharedPrefManager.putMedicineList(task.result.map { it.toObject(MedicineModel::class.java) })
+                    }
+                    else Toast.makeText(mContext, "Slow connection, restart the app", Toast.LENGTH_LONG).show()
+
+
+                }.addOnFailureListener {e->
+                    Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
+                }
+
+            }
 
         }
         catch (e:Exception){
@@ -155,6 +221,7 @@ class ActivityAdd : AppCompatActivity() {
             val medicineModel=MedicineModel(
                 binding.medName.text.toString(),
                 binding.retail.text.toString(),
+                binding.price.text.toString(),
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
@@ -169,6 +236,29 @@ class ActivityAdd : AppCompatActivity() {
             )
             productViewModel.uploadGeneral(medicineModel)
             Toast.makeText(mContext, "Added Successfully", Toast.LENGTH_SHORT).show()
+            binding.medName.text.clear()
+            binding.retail.text.clear()
+            binding.price.text.clear()
+            binding.discount.text.clear()
+            binding.bonus.text.clear()
+            binding.strength.text.clear()
+            binding.ml.text.clear()
+            binding.totalQuantity.text.clear()
+            binding.medFormula.text.clear()
+
+            lifecycleScope.launch {
+                productViewModel.getGeneral().addOnCompleteListener { task->
+                    if(task.isSuccessful){
+                        sharedPrefManager.putGeneralList(task.result.map { it.toObject(MedicineModel::class.java) })
+                    }
+                    else Toast.makeText(mContext, "Slow connection, restart the app", Toast.LENGTH_LONG).show()
+
+
+                }.addOnFailureListener {e->
+                    Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
+                }
+
+            }
 
         }
         catch (e:Exception){
@@ -182,6 +272,7 @@ class ActivityAdd : AppCompatActivity() {
             val medicineModel=MedicineModel(
                 binding.medName.text.toString(),
                 binding.retail.text.toString(),
+                binding.price.text.toString(),
                 binding.discount.text.toString(),
                 binding.bonus.text.toString(),
                 "",
@@ -196,6 +287,29 @@ class ActivityAdd : AppCompatActivity() {
             )
             productViewModel.uploadCosmetics(medicineModel)
             Toast.makeText(mContext, "Added Successfully", Toast.LENGTH_SHORT).show()
+            binding.medName.text.clear()
+            binding.retail.text.clear()
+            binding.price.text.clear()
+            binding.discount.text.clear()
+            binding.bonus.text.clear()
+            binding.strength.text.clear()
+            binding.ml.text.clear()
+            binding.totalQuantity.text.clear()
+            binding.medFormula.text.clear()
+
+            lifecycleScope.launch {
+                productViewModel.getCosmetics().addOnCompleteListener { task->
+                    if(task.isSuccessful){
+                        sharedPrefManager.putCosmeticsList(task.result.map { it.toObject(MedicineModel::class.java) })
+                    }
+                    else Toast.makeText(mContext, "Slow connection, restart the app", Toast.LENGTH_LONG).show()
+
+
+                }.addOnFailureListener {e->
+                    Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
+                }
+
+            }
 
         }
         catch (e:Exception){
@@ -206,13 +320,8 @@ class ActivityAdd : AppCompatActivity() {
     private fun fetchAndInitializeSpinner() {
 
         lifecycleScope.launch {
-            productViewModel.getPurchaser().addOnCompleteListener { task ->
-                if (task.isSuccessful){
-                    val document=task.result
-                    for (document in document){
-                        val purchaser=document.toObject(PurchaserModel::class.java)
-                        purchaserList.add(purchaser)
-                    }
+
+            purchaserList= sharedPrefManager.getPurchaserList() as  ArrayList<PurchaserModel>
                     //Toast.makeText(mContext, ""+purchaserList.size, Toast.LENGTH_SHORT).show()
                     // Set up the Spinner
                     val distinctDealerNames = purchaserList.map { it.dealerName }.distinct() // Get distinct dealer names
@@ -244,12 +353,6 @@ class ActivityAdd : AppCompatActivity() {
                         }
                     }
                 }
-
-            }
-                .addOnFailureListener {e:Exception->
-                    Toast.makeText(mContext, ""+e.message, Toast.LENGTH_SHORT).show()
-                }
-        }
 
     }
     @RequiresApi(Build.VERSION_CODES.O)
