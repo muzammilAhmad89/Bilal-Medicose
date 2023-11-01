@@ -39,7 +39,7 @@ class SharedPrefManager(context: Context) {
         val type: Type = object : com.google.gson.reflect.TypeToken<List<MedicineModel?>?>() {}.getType()
 
         return if (!json.isNullOrEmpty()) {
-            Gson().fromJson(json, type) ?: emptyList()
+            Gson().fromJson<List<MedicineModel>?>(json, type).sortedBy { it.purchaseDate } ?: emptyList()
         } else {
             emptyList()
         }
@@ -67,7 +67,7 @@ class SharedPrefManager(context: Context) {
         val type: Type = object : com.google.gson.reflect.TypeToken<List<MedicineModel?>?>() {}.getType()
 
         return if (!json.isNullOrEmpty()) {
-            Gson().fromJson(json, type) ?: emptyList()
+            Gson().fromJson<List<MedicineModel>?>(json, type).sortedBy { it.purchaseDate } ?: emptyList()
         } else {
             emptyList()
         }
@@ -78,7 +78,7 @@ class SharedPrefManager(context: Context) {
         val type: Type = object : com.google.gson.reflect.TypeToken<List<MedicineModel?>?>() {}.getType()
 
         return if (!json.isNullOrEmpty()) {
-            Gson().fromJson(json, type) ?: emptyList()
+            Gson().fromJson<List<MedicineModel>?>(json, type).sortedBy { it.purchaseDate } ?: emptyList()
         } else {
             emptyList()
         }
@@ -89,7 +89,7 @@ class SharedPrefManager(context: Context) {
         val type: Type = object : com.google.gson.reflect.TypeToken<List<MedicineModel?>?>() {}.getType()
 
         return if (!json.isNullOrEmpty()) {
-            Gson().fromJson(json, type) ?: emptyList()
+            Gson().fromJson<List<MedicineModel>?>(json, type).sortedBy { it.purchaseDate } ?: emptyList()
         } else {
             emptyList()
         }

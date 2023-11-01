@@ -97,6 +97,7 @@ class Repo(val context: Context) {
 
     }
     fun uploadGeneral(medicineModel: MedicineModel) {
+
         // Set the data of the new document to the MedicineModel object
         GENERAL_COLLECTION.add(medicineModel)
             .addOnSuccessListener { documentReference ->
@@ -107,5 +108,33 @@ class Repo(val context: Context) {
             }
 
     }
+
+    fun updateCosmetics(medicineModel: MedicineModel) {
+
+        // Set the data of the new document to the MedicineModel object
+        COSMETICS_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
+
+    }
+    fun updateGeneral(medicineModel: MedicineModel) {
+
+        // Set the data of the new document to the MedicineModel object
+        GENERAL_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
+
+
+    }
+    fun updateMedicine(medicineModel: MedicineModel) {
+
+        // Set the data of the new document to the MedicineModel object
+        MEDICINE_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
+
+    }
+    fun updateHerbal(medicineModel: MedicineModel) {
+
+        // Set the data of the new document to the MedicineModel object
+        HERBAL_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
+
+
+    }
+
 
 }

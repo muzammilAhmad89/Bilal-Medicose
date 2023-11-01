@@ -39,26 +39,9 @@ class MainActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener { menuItem -> // Handle navigation item clicks here
             val itemId = menuItem.itemId
 
-            if (itemId == R.id.herbal) {
+            if (itemId == R.id.purchasers) {
                 //startActivity(Intent(mContext,ActivityResult::class.java))
             }
-            else if(itemId==R.id.medicines){
-                //startActivity(Intent(mContext,ActivityStudentAttendanceRegister::class.java))
-
-            }
-            else if(itemId==R.id.general){
-                //Toast.makeText(mContext, "Comming Soon", Toast.LENGTH_SHORT).show()
-                //startActivity(Intent(mContext,ActivityMarkResult::class.java))
-
-            }
-            else if(itemId==R.id.cosmetic){
-                //Toast.makeText(mContext, "Comming Soon", Toast.LENGTH_SHORT).show()
-
-            }
-//            else if(itemId==R.id.logout){
-//                Toast.makeText(mContext, "Comming Soon", Toast.LENGTH_SHORT).show()
-//
-//            }
             // Close the navigation drawer
             val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
             drawerLayout.closeDrawer(GravityCompat.START)

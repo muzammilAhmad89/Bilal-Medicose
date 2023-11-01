@@ -17,6 +17,7 @@
             android:layout_height="60dp"
             android:background="@color/black"
             android:orientation="horizontal"
+            android:paddingLeft="10dp"
             >
             <ImageView
                 android:id="@+id/imgDrawer"
@@ -107,7 +108,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:layout_marginHorizontal="30dp"
-        android:background="@color/white"
+        android:background="@drawable/sharp_corner_background"
+        android:backgroundTint="@color/white"
         app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/nav_header"
         />
 </androidx.drawerlayout.widget.DrawerLayout>
