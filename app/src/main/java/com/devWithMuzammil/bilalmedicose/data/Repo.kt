@@ -20,26 +20,10 @@ class Repo(val context: Context) {
 
 
 
-    fun getHerbal(): Task<QuerySnapshot> {
-
-        return HERBAL_COLLECTION.get()
-
-    }
-     fun GetMedicine(): Task<QuerySnapshot> {
-
-        return MEDICINE_COLLECTION.get()
-
-    }
-    fun getCosmetics(): Task<QuerySnapshot> {
-
-        return COSMETICS_COLLECTION.get()
-
-    }
-    fun getGeneral(): Task<QuerySnapshot> {
-
-        return GENERAL_COLLECTION.get()
-
-    }
+    fun getHerbal(): Task<QuerySnapshot> { return HERBAL_COLLECTION.get() }
+     fun GetMedicine(): Task<QuerySnapshot> { return MEDICINE_COLLECTION.get() }
+    fun getCosmetics(): Task<QuerySnapshot> { return COSMETICS_COLLECTION.get() }
+    fun getGeneral(): Task<QuerySnapshot> { return GENERAL_COLLECTION.get() }
     fun savePurchaser(purchaserModel: PurchaserModel){
         try {
             // Add the model to Firestore
@@ -56,10 +40,7 @@ class Repo(val context: Context) {
             e.printStackTrace()
         }
     }
-    fun getPurchaser():Task<QuerySnapshot>{
-        return PURCHASER_COLLECTION.get()
-
-    }
+    fun getPurchaser():Task<QuerySnapshot>{ return PURCHASER_COLLECTION.get() }
 
     fun uploadHerbalMedicine(medicineModel: MedicineModel) {
 
@@ -109,32 +90,10 @@ class Repo(val context: Context) {
 
     }
 
-    fun updateCosmetics(medicineModel: MedicineModel) {
-
-        // Set the data of the new document to the MedicineModel object
-        COSMETICS_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
-
-    }
-    fun updateGeneral(medicineModel: MedicineModel) {
-
-        // Set the data of the new document to the MedicineModel object
-        GENERAL_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
-
-
-    }
-    fun updateMedicine(medicineModel: MedicineModel) {
-
-        // Set the data of the new document to the MedicineModel object
-        MEDICINE_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
-
-    }
-    fun updateHerbal(medicineModel: MedicineModel) {
-
-        // Set the data of the new document to the MedicineModel object
-        HERBAL_COLLECTION.document(medicineModel.id.toString()).set(medicineModel)
-
-
-    }
+    fun updateCosmetics(medicineModel: MedicineModel) { COSMETICS_COLLECTION.document(medicineModel.id.toString()).set(medicineModel) }
+    fun updateGeneral(medicineModel: MedicineModel) { GENERAL_COLLECTION.document(medicineModel.id.toString()).set(medicineModel) }
+    fun updateMedicine(medicineModel: MedicineModel) { MEDICINE_COLLECTION.document(medicineModel.id.toString()).set(medicineModel) }
+    fun updateHerbal(medicineModel: MedicineModel) { HERBAL_COLLECTION.document(medicineModel.id.toString()).set(medicineModel) }
 
 
 }
